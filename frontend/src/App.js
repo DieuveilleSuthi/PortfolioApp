@@ -1,25 +1,90 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import Navbar from "./components/navbar/navbar";
+import Home from "./pages/home/home";
+import Skills from "./pages/skills/skills";
+import Experience from "./pages/experience/experience";
+import Projects from "./pages/projects/projects";
+import Contact from "./pages/contact/contact";
 
-function App() {
+const App = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback((container) => {
+    console.log(container);
+  }, []);
+
+  const options = {
+    background: {
+      color: {
+        value: "hsl(0, 0%, 6%)",
+      },
+    },
+    particles: {
+      color: {
+        value: "#ffffff",
+      },
+      links: {
+        color: "#ffffff",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      move: {
+        direction: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: false,
+        speed: 2.5,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: 80,
+      },
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: { min: 1, max: 5 },
+      },
+    },
+    detectRetina: true,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
+        <div className="navbar-container">
+          <Navbar />
+        </div>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Skills" element={<Skills />} />
+            <Route path="/Experience" element={<Experience />} />
+            <Route path="/Projects" element={<Projects />} />
+            <Route path="/Contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
