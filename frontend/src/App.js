@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import Navbar from "./components/navbar/navbar";
@@ -67,23 +66,29 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <div>
-        <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
-        <div className="navbar-container">
-          <Navbar />
-        </div>
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Skills" element={<Skills />} />
-            <Route path="/Experience" element={<Experience />} />
-            <Route path="/Projects" element={<Projects />} />
-            <Route path="/Contact" element={<Contact />} />
-          </Routes>
-        </main>
+    <div>
+      <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
+      <div className="navbar-container">
+        <Navbar />
       </div>
-    </Router>
+      <main className="main-content">
+        <section id="home">
+          <Home />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="experience">
+          <Experience />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+    </div>
   );
 };
 

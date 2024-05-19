@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -9,46 +8,45 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <nav className="nav container">
-        <NavLink to="/" className="nav__logo">
+        <a href="#home" className="nav__logo" onClick={handleLinkClick}>
           DieuveilleSuthi
-        </NavLink>
+        </a>
 
         <div className={`nav__list-container ${menuOpen ? 'nav__list--open' : ''}`}>
           <ul className="nav__list">
             <li className="nav__item">
-              <NavLink to="/Skills" className="nav__link" onClick={() => setMenuOpen(false)}>
+              <a href="#skills" className="nav__link" onClick={handleLinkClick}>
                 Skills
-              </NavLink>
+              </a>
             </li>
             <li className="nav__item">
-              <NavLink to="/Experience" className="nav__link" onClick={() => setMenuOpen(false)}>
+              <a href="#experience" className="nav__link" onClick={handleLinkClick}>
                 Experience
-              </NavLink>
+              </a>
             </li>
             <li className="nav__item">
-              <NavLink to="/Projects" className="nav__link" onClick={() => setMenuOpen(false)}>
+              <a href="#projects" className="nav__link" onClick={handleLinkClick}>
                 Projects
-              </NavLink>
+              </a>
             </li>
             <li className="nav__item">
-              <NavLink to="/Contact" className="nav__link" onClick={() => setMenuOpen(false)}>
+              <a href="#contact" className="nav__link" onClick={handleLinkClick}>
                 Contact
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>
 
-        {menuOpen?
-            <div className="nav__toggle" onClick={handleToggleMenu}>
-                X
-            </div>:        
-            <div className="nav__toggle" onClick={handleToggleMenu}>
-                ☰
-            </div>
-        }
+        <div className="nav__toggle" onClick={handleToggleMenu}>
+          {menuOpen ? 'X' : '☰'}
+        </div>
       </nav>
     </header>
   );
