@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { skillsUtils } from "../../utils/skillsUtils";
 import './skills.css';
 
@@ -25,13 +25,13 @@ const Skills = () => {
                 </ul>
             </div>
             <div className="skillsList">
-                <ul>
-                    {filteredSkills.map(skill => (
-                        <li key={skill.id}>{skill.name}</li>
-                    ))}
-                </ul>
+                {filteredSkills.map(skill => (
+                    <div key={skill.id} className="skillItem">
+                        <img src={skill.image} alt="notImg" className="logo" />
+                        <p>{skill.name}</p>
+                    </div>
+                ))}
             </div>
-
         </div>
     );
 }

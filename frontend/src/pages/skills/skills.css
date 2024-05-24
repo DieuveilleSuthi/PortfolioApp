@@ -30,3 +30,23 @@
 .btn.active {
     background-color: skyblue;
 }
+
+.skillsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    justify-items: center; 
+    margin-top: 20px;
+    padding: 0 20px; 
+}
+
+.skillItem {
+    text-align: center; 
+    margin-top: 50px;
+}
+
+.logo {
+    width: 100px; 
+    height: 100px;
+    margin-bottom: 10px;
+}
