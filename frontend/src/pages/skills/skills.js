@@ -21,7 +21,7 @@ const Skills = () => {
                     <li className={`btn ${selectedCategory === 'All' ? 'active' : ''}`} onClick={() => handleCategoryClick('All')}>All</li>
                     <li className={`btn ${selectedCategory === 'Language' ? 'active' : ''}`} onClick={() => handleCategoryClick('Language')}>Programming Languages</li>
                     <li className={`btn ${selectedCategory === 'Frameworks' ? 'active' : ''}`} onClick={() => handleCategoryClick('Frameworks')}>Frameworks</li>
-                    <li className={`btn ${selectedCategory === 'Other' ? 'active' : ''}`} onClick={() => handleCategoryClick('Other')}>Tools/Others</li>
+                    <li className={`btn ${selectedCategory === 'Other' ? 'active' : ''}`} onClick={() => handleCategoryClick('Other')}>Others</li>
                 </ul>
             </div>
             <div className="skillsList">
