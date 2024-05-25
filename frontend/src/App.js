@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import "./App.css";
+import 'tachyons';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import Navbar from "./components/navbar/navbar";
@@ -8,6 +9,8 @@ import Skills from "./pages/skills/skills";
 import Experience from "./pages/experience/experience";
 import Projects from "./pages/projects/projects";
 import Contact from "./pages/contact/contact";
+import Footer from "./components/footer/footer";
+
 
 const App = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -72,22 +75,24 @@ const App = () => {
         <Navbar />
       </div>
       <main className="main-content">
-        <section id="home">
+        <section id="home" style={{ marginTop: "var(--header-height)" }}>
           <Home />
         </section>
-        <section id="skills">
+        <section id="skills" style={{ marginTop: "var(--header-height)" }}>
           <Skills />
         </section>
-        <section id="experience">
+        <section id="experience" style={{ marginTop: "var(--header-height)" }}>
           <Experience />
         </section>
-        <section id="projects">
+        <section id="projects" style={{ marginTop: "var(--header-height)" }}>
           <Projects />
         </section>
-        <section id="contact">
+        <section id="contact" style={{ marginTop: "var(--header-height)" }}>
           <Contact />
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };

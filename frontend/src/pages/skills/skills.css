@@ -34,9 +34,10 @@
 .skillsList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px; 
+    gap: 20px; 
     justify-items: center; 
-    padding: 0 10px; 
+    margin-top: 20px;
+    padding: 0 20px; 
 }
 
 .skillItem {
@@ -45,7 +46,7 @@
 }
 
 .logo {
-    width: 50px; 
-    height: 50px;
+    width: 100px; 
+    height: 100px;
     margin-bottom: 10px;
 }

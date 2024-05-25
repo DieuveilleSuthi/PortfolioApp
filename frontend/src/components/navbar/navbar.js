@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -12,8 +13,23 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "nav__blur-background" : ""}`}>
       <nav className="nav container">
         <a href="#home" className="nav__logo" onClick={handleLinkClick}>
           DieuveilleSuthi

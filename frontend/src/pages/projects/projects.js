@@ -9,13 +9,18 @@ const Projects = () => {
         setSelectedCategory(category);
     };
 
+    const handleLinkClick = (url) => {
+        window.open(url, '_blank');
+    };
+
     const filteredProjects = selectedCategory === 'All'
         ? projectsUtils
         : projectsUtils.filter(project => project.category === selectedCategory);
 
     return (
         <div>
-            <h1 className="title">My recents Projects</h1>
+            <br/><br/><br/>
+            <h1 className="title">My recent Projects</h1>
             <div className="buttonsContainer">
                 <ul>
                     <li className={`btn ${selectedCategory === 'All' ? 'active' : ''}`} onClick={() => handleCategoryClick('All')}>All</li>
@@ -26,10 +31,18 @@ const Projects = () => {
             <div className="projectsList">
                 {filteredProjects.map(project => (
                     <div key={project.id} className="projectItem">
-                        <img src={project.image} alt="notImg" className="logo" />
+                        <img src={project.image} alt="notImg" className="projectImage" />
                         <div>
-                            <h3>{project.name}</h3>
-                            <h4>{project.description}</h4>
+                            <h3 className="projectTitle">{project.name}</h3>
+                            <h4 className="projectDescription">{project.description}</h4>
+                        </div>
+                        <div className="buttonsContainer">
+                            <ul>
+                                <li className="btn" onClick={() => handleLinkClick(project.githubLink)}>Github</li>
+                                {project.link && (
+                                    <li className="btn" onClick={() => handleLinkClick(`https://${project.link}`)}>Link</li>
+                                )}
+                            </ul>
                         </div>
                     </div>
                 ))}
