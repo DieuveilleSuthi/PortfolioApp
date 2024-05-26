@@ -18,19 +18,21 @@ const Experience = () => {
                     </div>
                     <div className="details">
                         <h3>{exp.title}</h3>
-                        <p>{exp.period}</p>
-                        <p>{exp.location}</p><br/>
+                        <p className="periodAndLocation">{exp.period}</p>
+                        <p className="periodAndLocation">{exp.location}</p><br/>
                         <ul>
                             {exp.tasks.map((task, i) => (
                                 <li key={i}>{task}</li>
                             ))}
                         </ul><br></br>
-                        <div className="buttonsContainer">
+                        <div className="buttonsContainer1">
                             <ul>
-                                <li className="btn">{exp.skills.join(', ')}</li>
+                                {exp.skills.map((skill, i) => (
+                                    <li className="btn1">{skill}</li>
+                                ))
+                                }
                             </ul>
                         </div>        
-                        <p><strong>Compétences:</strong> {exp.skills.join(', ')}</p>
                     </div>
                 </div>
             ))}
