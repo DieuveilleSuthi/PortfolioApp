@@ -33,9 +33,6 @@ const Footer = () => {
                                 <li className="nav-item">
                                     <a className="nav-link" href="#projects">Projects</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#contact">Contact</a>
-                                </li>
                             </ul>
                             <div className="cv-button-container">
                                 <a href="/CV_V1_Alternance.pdf" target="_blank" rel="noopener noreferrer" className="cv-button">

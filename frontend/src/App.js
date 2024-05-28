@@ -8,7 +8,6 @@ import Home from "./pages/home/home";
 import Skills from "./pages/skills/skills";
 import Experience from "./pages/experience/experience";
 import Projects from "./pages/projects/projects";
-import Contact from "./pages/contact/contact";
 import Footer from "./components/footer/footer";
 
 
@@ -86,9 +85,6 @@ const App = () => {
         </section>
         <section id="projects" style={{ marginTop: "var(--header-height)" }}>
           <Projects />
-        </section>
-        <section id="contact" style={{ marginTop: "var(--header-height)" }}>
-          <Contact />
         </section>
       </main>
 

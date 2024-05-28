@@ -52,11 +52,6 @@ const Navbar = () => {
                 Projects
               </a>
             </li>
-            <li className="nav__item">
-              <a href="#contact" className="nav__link" onClick={handleLinkClick}>
-                Contact
-              </a>
-            </li>
           </ul>
         </div>
 
