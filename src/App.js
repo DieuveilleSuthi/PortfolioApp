@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import "./App.css";
 import 'tachyons';
-import Particles from "react-tsparticles";
+import Particles from 'react-particles';
 import { loadSlim } from "tsparticles-slim";
 import Navbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
