@@ -48,9 +48,16 @@ const Home = () => {
             <div>
                 <h1>hello There👋🏼,</h1><br/>
                 <h2>I'm <span className="name">Dieuveille Suthi</span></h2><br/>
-                <h3>
-                    <TypingText texts={["a Fullstack developer", "& tech lover"]} speed={100} />
-                </h3>
+                <div>
+                    <h3>
+                        <TypingText texts={["a Fullstack developer", "& tech lover"]} speed={100} />
+                    </h3>
+                </div>
+                <div className="cv-button-container">
+                    <a href="/CV_V1_Alternance.pdf" target="_blank" rel="noopener noreferrer" className="cv-button">
+                        See my resume
+                    </a>
+                </div>
             </div>
             <div>
                 <img src={homeImg} alt="homeImg" />

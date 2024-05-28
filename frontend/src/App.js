@@ -74,10 +74,10 @@ const App = () => {
       <div className="navbar-container">
         <Navbar />
       </div>
-      <main className="main-content">
-        <section id="home" style={{ marginTop: "var(--header-height)" }}>
+      <section id="home" style={{ marginTop: "var(--header-height)" }}>
           <Home />
-        </section>
+      </section>
+      <main className="main-content">
         <section id="skills" style={{ marginTop: "var(--header-height)" }}>
           <Skills />
         </section>

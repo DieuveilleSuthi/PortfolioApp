@@ -28,7 +28,9 @@ const Experience = () => {
                         <div className="buttonsContainer1">
                             <ul>
                                 {exp.skills.map((skill, i) => (
-                                    <li className="btn1">{skill}</li>
+                                    <div key={i}>
+                                        <li className="btn1">{skill}</li>
+                                    </div>
                                 ))
                                 }
                             </ul>
