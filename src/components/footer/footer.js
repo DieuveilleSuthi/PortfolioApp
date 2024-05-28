@@ -10,10 +10,10 @@ const Footer = () => {
                         <div className="col-md-6 col-lg-5 col-12 ft-1">
                             <p>Find me on my socials:</p>
                             <div className="footer-icons">
-                                <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.linkedin.com/in/dieuveille-suthi-mpounkouo/" target="_blank" rel="noopener noreferrer">
                                     <i className="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://github.com/your-github-id" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/DieuveilleSuthi" target="_blank" rel="noopener noreferrer">
                                     <i className="fab fa-github"></i>
                                 </a>
                             </div>
