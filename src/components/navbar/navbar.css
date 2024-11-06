@@ -64,7 +64,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: skyblue;
     }
   
     .nav__list-container.nav__list--open {
